@@ -109,7 +109,6 @@ function stickyCase(string) {
 function leetspeak(string) {
   return string.replace(/a/g, "4").replace(/e/g, "3").replace(/i/g, "1").replace(/o/g, "0").replace(/s/g, "5").replace(/t/g, "7")
   }
-}
 
 export {
   approximatelyEqual,
