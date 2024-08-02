@@ -14,6 +14,7 @@ function average(x, y) {}
 
 // Return true if x and y are mostly equivalent up to a tolerance of 0.001.
 // In other words, return true if the aboslute value of x - y is less than 0.001.
+// (Math.abs() is the command for an absolute value. Look up on MDN for more info)
 // Ex.:
 //   approximatelyEqual(10.001, 10);
 //   => true
