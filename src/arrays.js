@@ -56,7 +56,13 @@ function itemsWithLength(items, length) {
 // Ex.:
 //   everyOtherItem(['a', 'b', 'c', 'd', 'e']);
 //   => ['a', 'c', 'e']
-function everyOtherItem(items) {}
+function everyOtherItem(items) {
+  let everyOtherArray = []
+  for (let i = 0; i < items.length; i += 2) {
+    everyOtherArray.push(items[i])
+  }
+  return everyOtherArray
+}
 
 // Given a list of words and a letter, return the indexes of the words that
 // start with that letter. You can assume that the words and letter will always
@@ -64,7 +70,15 @@ function everyOtherItem(items) {}
 // Ex.:
 //   findWordsStartingWith(['apple', 'banana', 'kiwi', 'pear', 'bacon'], 'b');
 //   => [1, 4]
-function findWordsStartingWith(words, letter) {}
+function findWordsStartingWith(words, letter) {
+  let wordIndexArray = []
+  for (let i = 0; i < words.length; i++) {
+    if (words[i][0] === letter) {
+      wordIndexArray.push(i)
+    }
+  }
+  return wordIndexArray
+}
 
 // Return the `n` smallest values in the array in descending order (largest
 // numbers first). Assume that `n` will always be less than the length of the
