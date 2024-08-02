@@ -6,7 +6,24 @@
 //   => ['a']
 //   commonStrings(['zoo', 'space', 'zoo'], ['zoo', 'space', 'boat']);
 //   => ['zoo', 'space']
-function commonStrings(array1, array2) {}
+
+// I'm going to try a nested loop function
+// I've gotten here. This doesn't return duplicates in the second array, but not the first.
+function commonStrings(array1, array2) {
+    let commonArray = []
+    for (let i = 0; i < array1.length; i++) {
+        for (let j = 0; j < array2.length; j++) {
+            if (commonArray.includes(array1[i])) {
+                break
+            }
+            if (array1[i] === array2[j]) {
+                commonArray.push(array1[i])
+                break
+            }
+        }
+    }
+    return commonArray
+  }
 
 // Given three numbers, return a list of numbers from 1 to 100 that are
 // divisible by at least one of a, b or c.
