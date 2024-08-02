@@ -219,19 +219,35 @@ outputArgs('hi', 'bye');
 **_What is the purpose of functions?_**
 
 ```
-Functions can be used to create named blocks of code that can be executed/reused later. They help you keep code DRY and maintainable.
+Functions can be used to create named blocks of code that can be executed/reused later. They help you keep code DRY and maintainable.'
+So, the phase above was defaulted into this question. Rather than erase it, I'd rather make sure you're aware of this for the future. To put the purpose of functions into my own words, each function acts like a machine. We can create a function to perform a specific task, and then call it later in our code as often as we require. This allows us to write much less code, and have an easier time debugging errors as all of our operations are located in one place.
+Functions also allow us to conveniently use operations in lower scope operations (children) such as other functions or other conditional statements. This allows us to design a logic framework more easily for higher complexity tasks. 
 ```
 
 **_What is the difference between `console.log` and `return`?_**
 
 ```
-REPLACE THIS WITH YOUR ANSWER
+console.log is a method that allows us to print whatever we desire onto the console. Return is a command that allows us to specify the end of a function. There are many differences between these, so I'll try to break it down
+1. console.log doesn't change anything within the code. All console.log does is print what we command it to print. It can't save anything to a variable. It can technically perform operations within the parenthesis to invoke it (ex: console.log(2 + 1) returns 3), but it can't update or change anything within the code
+return on the other hand can assign values to variables.
+2. console.log is great for debugging, as we can check processes within our code. Loops, if/else statements and functions usually output something, but without a console.log command we can't "see" the changes taking place. The computer merely follows the logic we've programmed; it doesn't know when a logic error has been made, and so can't tell us something is wrong.
+return can only be used within a function, and we don't get to "see" what the logic does unless we include a console.log command.
+3. console.log, as it doesn't modify data, can't be used to tell the code any logic.
+return can modify data, and allows us to specify a stopping point within code, allowing for logic dependent on our needs
 ```
 
 **_What's the difference between defining and calling a function?_**
 
 ```
-REPLACE THIS WITH YOUR ANSWER
+Defining a function is letting our code know that a function exists, and telling it the logic it needs to perform a task. This definition helps our code know the name of the function, any parameters the function requires, and then gives the code to run when we call it
+Ex: function functionName(parameter) {
+  //code to run
+}
+The function can have as many parameters as needed, or none. We specify how we want the machine to run, but this doesn't actually run the code
+
+Calling or invoking a function is when we actually run the code that we've set up within the function. We don't have to know anything about the inner workings of the function to call it; we merely need to know its name, and the parameters that it requires. 
+Ex: functionName(argument)
+We use arguments within the function to assign values to the parameters that we gave when we initially defined the function
 ```
 
 ### B.2. Describe these data types.
@@ -241,25 +257,32 @@ Write a short description of the following data types:
 **_String_**
 
 ```
-REPLACE THIS WITH YOUR ANSWER
+Primitive data type, which means it can only have one value.
+Strings are any combination of characters, and merely represent those characters in the order that they are placed. Anything within a string will be assumed to be a string, so even if we write code elements these won't be read as code.
+We let the computer know that data is a string type by placing it within single or double quotations (ex: "" or ''). This data type also tends to be higher priority, so if you combine strings with other data types, javascript may attempt to convert the other data type to also be a string to make an operation occur.
 ```
 
 **_Number_**
 
 ```
-REPLACE THIS WITH YOUR ANSWER
+Primitive data type
+Number represents characters that have mathematical meaning. These can be integers (whole numbers with no decimal), or floats (numbers that contain a decimal). These are written into the code directly as the number. Javascript will interpret this data type and allow mathematical operators (+, -, *, /, etc.) to occur with them
 ```
 
 **_Boolean_**
 
 ```
-REPLACE THIS WITH YOUR ANSWER
+Primitive data type
+Boolean values represent one of two arguments: true or false. These values allow us to make conditional statements. These are common outputs from conditional statements, but can also be entered into the code by using true or false. An important note is that these are case sensitive, so you must write them all lower case in order for the computer to recognize them as boolean values.
 ```
 
 **_Array_**
 
 ```
-REPLACE THIS WITH YOUR ANSWER
+Arrays are a non-primitive data type. This means that there can be more than one value in these, and you can have multiple data types within arrays as well. 
+Arrays are multiple pieces of data, each placed sequentially within the array. The data included can be any primitive data type, and can even include other arrays that become nested into the array.
+Ex: ["String", "Dog", 8, true]
+We designate an array by using square brackets []. Each value stored is then separated by a comma. These are useful for many reasons, but the main thing we've talked about is that arrays allow a single operation to be performed on multiple data types in a succinct fashion.
 ```
 
 ### B.3. Trace the value of `x`
@@ -282,7 +305,8 @@ completed for you.
 
 ```
 Initial values: y = 0, x = 5
-1:              y = 1, x = ??
-2:              y = 2, x = ??
-3:              y = 3, x = ??
+1:              y = 1, x = 10
+2:              y = 2, x = 15
+3:              y = 3, x = 15
+At y=3, the while loop will no longer have a true condition, and so it won't run the loop anymore. This means that x will not be modified, so it will stay the same value as it was before at y=2
 ```
