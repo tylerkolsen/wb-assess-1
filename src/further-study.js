@@ -8,7 +8,7 @@
 //   => ['zoo', 'space']
 
 // I'm going to try a nested loop function
-// I've gotten here. This doesn't return duplicates in the second array, but not the first.
+// I tried a bunch of things, including doing a nested loop for a second time. I figured out a simplier method using .includes
 function commonStrings(array1, array2) {
     let commonArray = []
     for (let i = 0; i < array1.length; i++) {
@@ -30,7 +30,15 @@ function commonStrings(array1, array2) {
 // Ex.:
 //   divisibleByEither(50, 30, 29);
 //   => [29, 30, 50, 58, 60, 87, 90, 100]
-function divisibleByEither(a, b, c) {}
+function divisibleByEither(a, b, c) {
+    let divisibleArray = []
+    for (let i = 1; i <= 100; i++) {
+        if (i % a === 0 || i % b === 0 || i % c === 0) {  
+            divisibleArray.push(i)
+        }           
+    }
+    return divisibleArray
+}
 
 // Compress a string using the rules below and return the result. To compress a
 // string, replace consecutive duplicate characters with a number and the
