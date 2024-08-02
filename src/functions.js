@@ -43,19 +43,56 @@ function fullName(firstName, lastName) {
 // Ex.:
 //   generateSentence('Kay', 'coffee', 'the local cafe');
 //   => 'Kay was drinking coffee at the local cafe.'
-function generateSentence(person, beverage, location) {}
+function generateSentence(person, beverage, location) {
+  return `${person} was drinking ${beverage} at ${location}.`
+}
 
 // Return the given string with all vowels replced with '*' characters.
 // Ex.:
 //   censorVowels('javascript');
 //   => 'j*v*scr*pt'
-function censorVowels(string) {}
+function censorVowels(string) {
+  return string.replace(/a|e|i|o|u/gi, "*")
+}
+//   return string.replace(/a/gi, "*").replace(/e/gi, "*").replace(/i/gi, "*").replace(/o/gi, "*").replace(/u/gi, "*")
+// this one was interesting. I tried a few methods, but eventually this one worked. the /x/ allows it to find the instance even inside the same word. the or was a bit tricky
+// the g means to search globally instead of stopping at the first instance; the i makes it case insensitive so I don't have to type 5 more uppercase options
 
 // Return the given string in sticky case.
 // Ex.:
 //   stickyCase('hello world');
 //   => 'hElLo wOrLd'
-function stickyCase(string) {}
+
+// This function works by placing it into an array and reassembling, but I think I can do this better
+// function stickyCase(string) {
+//   let stickyWord
+//   let stickyArray = []
+//   for (let i = 0; i < string.length; i++) {
+//     if (i % 2) {
+//       stickyArray[i] = string[i].toUpperCase()
+//       console.log(stickyArray[i])
+//     } else {
+//       stickyArray[i] = string[i].toLowerCase()
+//     }
+//   }
+//   for (let i = 0; i < stickyArray.length; i++) {
+//     stickyWord += stickyArray[i]
+//   }
+//   return stickyWord
+// }
+function stickyCase(string) {
+  let stickyWord = ""
+  let stickyArray = []
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2) {
+      stickyWord += string[i].toUpperCase()
+    } else {
+      stickyWord += string[i].toLowerCase()
+    }
+  }
+    return stickyWord
+}
+// This avoids creating and dumping the array, and puts each piece directly into a new string
 
 // Return the given string in leetspeak. Leetspeak is a modified version of
 // English where characters are replaced by numbers or symbols. For this
@@ -69,7 +106,10 @@ function stickyCase(string) {}
 // Ex.:
 //   leetspeak('javascript');
 //   => 'j4v45cr1p7'
-function leetspeak(string) {}
+function leetspeak(string) {
+  return string.replace(/a/g, "4").replace(/e/g, "3").replace(/i/g, "1").replace(/o/g, "0").replace(/s/g, "5").replace(/t/g, "7")
+  }
+}
 
 export {
   approximatelyEqual,
