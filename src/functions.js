@@ -54,9 +54,33 @@ function generateSentence(person, beverage, location) {
 function censorVowels(string) {
   return string.replace(/a|e|i|o|u/gi, "*")
 }
+
 //   return string.replace(/a/gi, "*").replace(/e/gi, "*").replace(/i/gi, "*").replace(/o/gi, "*").replace(/u/gi, "*")
 // this one was interesting. I tried a few methods, but eventually this one worked. the /x/ allows it to find the instance even inside the same word. the or was a bit tricky
 // the g means to search globally instead of stopping at the first instance; the i makes it case insensitive so I don't have to type 5 more uppercase options
+
+// **** Here is my explanation for the regular expressions, and a version of this function written using methods we directly learned during week 1 ****
+// I ran into regular expressions through doing Code wars challenges. There were two that used this function: "Vowel Count (7kyu)" and "Disemvowel trolls (7kyu)" where they were also
+// replacing various portions of scripts. After looking over the solutions from these I did a rabbit hole dive into regular expressions. I'm not great on the knowledge, but here goes:
+// For finding simple expressions within a string (the only use case i've dug into), you can approach it in two ways. You can use quotations to designate the phrase you're looking
+// for (ex: "garage") or you can use the / to indicate what you want (ex: /bus/). These evaluations only reach the first example and then stop, so you need to add some additional
+// qualifiers to let the method know you want all of the instances. This is what the g after the slashes refers to, which is "global". The i refers to making the search case insensitive.
+// there are many methods in regular expressions, but I used the .replace one in this instance because we wanted to perform that action. The basic syntax is:
+// string.replace((string you're looking for)any modifiers, what to replace the string you've designated with)
+
+// **** Here is the week 1 technique version of this ****
+// function censorVowels(string) {
+//   let censoredString = ""
+//   for(let i = 0; i < string.length; i++) {
+//     if (string[i] === "a" || string[i] === "e" || string[i] === "i" || string[i] === "o" || string[i] === "u") {
+//       censoredString += "*"
+//     } else {
+//       censoredString += string[i]
+//     }
+//   }
+//   return censoredString
+// }
+// I've tested this using the software, and it checks out
 
 // Return the given string in sticky case.
 // Ex.:
